@@ -16,5 +16,5 @@ function changeImage() {
 setInterval(changeImage ,3000);
 
 follow_me.addEventListener("click",()=>{
-    window.location.href="https://www.facebook.com"
+    window.location.href="https://github.com/marstrx";
 })
