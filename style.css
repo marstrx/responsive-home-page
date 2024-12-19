@@ -1,0 +1,278 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;  
+}
+body{
+    color: #000 ;
+}
+.background{
+    position: relative;
+    background-color: pink;
+     
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 600;
+    flex: 1;
+    color: #600081;
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    margin-right: 1%;
+    border-radius: 50%;
+}
+
+.nav_menu img{
+    width: 30px;
+    height: 30px;
+}
+
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    top: 0 ;
+    position: fixed;
+    font-family:  monospace; 
+}
+
+.nav_items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+
+}
+
+.nav_items li{
+    list-style: none;
+     padding: 1em;
+}
+
+.nav_items li a{
+    text-decoration: none;
+    transition: 0.3s ;
+    font-size: 16px;
+    font-weight: 600;
+    color: #600081;
+    letter-spacing: 1px;
+}
+
+.nav_items li::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #64009e;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+
+.nav_items li:hover::after{
+    width: 100%;
+}
+
+.nav_menu{
+    display: none;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    width: 90%;
+    padding: 11rem 2rem 4em 2em;
+    margin: auto;
+}
+
+.main h1{
+    font-size: 3.5em;
+    color: #473829;
+    line-height: 1.5;
+    padding: 2% 0;
+}
+
+.left h3{
+    font-size: 20px;
+    color: #555;
+}
+
+.left p{
+    font-size: 14px;
+    line-height: 1.5rem;
+    padding: 4% 0;
+    color: #555;
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img{
+    width: 650px;
+    max-width: 100%;
+    height: 340px;
+    border-radius: 9px;
+}
+
+.btn{
+    padding: 12px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 15px;
+    border: 2px solid #000;
+    transition: all 0.5s linear;
+}
+
+.btn:hover{
+    background-color: transparent; 
+    cursor: pointer;
+    color: #000;
+}
+
+
+
+@media only screen and (max-width : 980px){
+    .main{
+        width: 95%;
+        gap: 0;
+    }
+}
+
+@media only screen and (max-width : 850px){
+    .main{
+        padding : 8em 0em 4em 1em;
+    }
+}
+
+@media only screen and (max-width : 700px){
+    .nav_items{
+        position: absolute;
+        top: -1%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5em 0 2em 0 ;
+        gap: 0.9rem;
+        transition: 0.5s;
+        z-index: -1;
+        transform: translateY(-100%);
+        flex-direction: column;
+
+    }
+
+    .item{
+        flex-direction: column;
+    }
+
+    .nav_items.open{
+        transform: translate(0);
+    }
+
+    .nav_menu{
+        display: block;
+        font-size: 2em;
+
+    }
+    
+}
+
+@media only screen and (max-width : 500px){
+    .right img {
+        width: 500px;
+        max-width: 100%;
+        height: 220px;
+        border-radius: 9px;
+    }
+    .main h1 {
+        font-size: 2em;
+        color: #473829;
+        line-height: 1.5;
+        padding: 10% 0;
+    }
+
+    .btn {
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 5;
+        border-radius: 13px;
+        border: 1px solid #000;
+        transition: all 0.5s linear;
+    }
+
+    .left h3 {
+        font-size: 14px;
+        color: #555;
+    }
+    .logo {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #600081;
+    }
+    .logo img {
+        width: 40px;
+        height: 40px;
+        margin-right: 1.8%;
+        border-radius: 50%;
+    }
+    .nav_menu img {
+        width: 27px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width : 330px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        padding-top: 120px;
+        
+    } 
+    .btn {
+        border-radius: 15px;
+        border: 1px solid #000;
+        transition: all 0.5s linear;
+        margin-top: 224px;
+        z-index: 1;
+        position: absolute;
+        margin-left: 50%;
+      } 
+      
+    .right img {
+        width: 270px;
+        max-width: 100%;
+        height: 200px;
+        border-radius: 9px;
+    }
+    .nav_menu img {
+        width: 20px;
+        height: 20px;
+      }
+    
+}
